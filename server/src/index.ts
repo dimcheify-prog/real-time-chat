@@ -31,7 +31,7 @@ sequelize
 
 const start = async () => {
   try {
-    sequelize.sync({ force: true });
+    sequelize.sync();
     app.listen(port, () => console.log("server is running"));
   } catch (err) {
     console.log(err);

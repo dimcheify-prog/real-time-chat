@@ -6,7 +6,7 @@ import { ApiError } from "../exceptions/apiErrors";
 
 class UserService {
   async register(username, password) {
-    const candidate = await User.findOne({ where: { username: username } });
+    const candidate = await User.findOne({where: {username: username}});
     if (candidate) {
       throw ApiError.BadRequest(
         `Пользователь с таким почтовым адресом ${username} уже существует`
@@ -37,7 +37,7 @@ class UserService {
   async login(username, password) {
     const user = await User.findOne({ where: { username: username } });
     if (!user) {
-      throw ApiError.BadRequest("Пользователь с данным имейл не был найден");
+      throw ApiError.BadRequest("Пользователь с данным ником не был найден");
     }
     const isPassEqual = await bcrypt.compare(password, user.password);
     if (!isPassEqual) {

@@ -1,5 +1,5 @@
 import css from "./LoginForm.module.css";
-import { InputWithLabel } from "@/6_shared/ui";
+import {Button, InputWithLabel} from "@/6_shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { logitFormValidation } from "../lib/loginFormValidation";
@@ -9,7 +9,7 @@ export const LoginForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(logitFormValidation) });
+  } = useForm<{username: string, password: string}>({ resolver: zodResolver(logitFormValidation) });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -29,7 +29,7 @@ export const LoginForm = () => {
         placeholder="Пароль"
         type="password"
       />
-      <button type="submit">submit</button>
+      <Button type="submit">Войти</Button>
     </form>
   );
 };

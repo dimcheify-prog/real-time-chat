@@ -1,0 +1,25 @@
+.root {
+    border: none;
+    background: var(--second);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+
+    & _size_md {
+        width: 500px;
+        padding: 5px;
+    }
+
+    & _size_sm {
+        width: 300px;
+    }
+
+    &_variant_outlined {
+        background: transparent;
+        border: 1px solid var(--second);
+        color: var(--second);
+    }
+}

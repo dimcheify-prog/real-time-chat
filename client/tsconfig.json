@@ -23,7 +23,8 @@
     "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src", "global.d.ts", "src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]

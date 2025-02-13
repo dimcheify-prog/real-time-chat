@@ -2,13 +2,12 @@ import { InputHTMLAttributes } from "react";
 import css from "./InputWithLabel.module.css";
 import classNames from "classnames";
 import { FieldPath, FieldValues, UseFormRegister } from "react-hook-form";
-
-type sizeTypes = "sm" | "md";
+import {SizeTypes} from "@/6_shared/ui/types.ts";
 
 type InputAttr = Omit<InputHTMLAttributes<HTMLInputElement>, "size">;
 
 interface InputWithLabelProps<T extends FieldValues> extends InputAttr {
-  size?: sizeTypes;
+  size?: SizeTypes;
   field: FieldPath<T>;
   register: UseFormRegister<T>;
 }
