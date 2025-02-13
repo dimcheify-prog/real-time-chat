@@ -6,7 +6,7 @@ export const router = Router();
 
 router.post(
   "/register",
-  body("email").isEmail(),
+  body("username").isLength({ min: 3 }),
   body("password").isLength({ min: 3, max: 32 }),
   userController.registration
 );

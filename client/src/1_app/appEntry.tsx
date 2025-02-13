@@ -1,14 +1,13 @@
-import { appRouter } from "@/1_app/appRouter";
-import { Provider } from "react-redux";
-import { makeStore } from "@/1_app/appStore";
-import { RouterProvider } from "react-router";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import {RouterProvider} from "react-router";
+import {appRouter} from "@/1_app/appRouter.tsx";
+import "@/6_shared/base.css";
 
-function App() {
-  return (
-    <Provider store={makeStore()}>
-      <RouterProvider router={appRouter()} />
-    </Provider>
-  );
-}
+const root = document.getElementById("root");
 
-export default App;
+createRoot(root).render(
+    <StrictMode>
+        <RouterProvider router={appRouter()}/>
+    </StrictMode>
+);

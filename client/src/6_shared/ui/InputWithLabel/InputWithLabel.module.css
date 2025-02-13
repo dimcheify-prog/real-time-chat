@@ -1,0 +1,15 @@
+.root {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+
+  &_size_md {
+    width: 400px;
+    padding: 5px;
+  }
+
+  &_size_sm {
+    width: 200px;
+  }
+}
