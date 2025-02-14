@@ -1,6 +1,6 @@
 .root {
-    margin: 0 auto;
-    max-width: 1000px;
-    height: 100vh;
-    background: var(--first);
+  margin: 0 auto;
+  max-width: 1000px;
+  height: 100vh;
+  background: var(--fourth);
 }

@@ -1,0 +1,13 @@
+.root {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 7%;
+  background: var(--first);
+
+  &_username {
+    color: var(--white);
+  }
+}
