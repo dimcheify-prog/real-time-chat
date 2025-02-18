@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { UserTypes } from "./types";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { AuthPayload, UserTypes } from "./types";
 import { RootState } from "@/1_app/appStore";
 import { authApi } from "../api/authApi";
 
@@ -28,7 +28,7 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addMatcher(
       authApi.endpoints.login.matchFulfilled,
-      (state, action) => {
+      (state, action: PayloadAction<AuthPayload>) => {
         state.isAuthorized = true;
         state.accessToken = action.payload.accessToken;
         state.user = action.payload.user;
@@ -36,7 +36,7 @@ export const authSlice = createSlice({
     );
     builder.addMatcher(
       authApi.endpoints.regstration.matchFulfilled,
-      (state, action) => {
+      (state, action: PayloadAction<AuthPayload>) => {
         state.isAuthorized = true;
         state.accessToken = action.payload.accessToken;
         state.user = action.payload.user;

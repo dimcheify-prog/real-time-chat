@@ -4,7 +4,7 @@ import { RootState } from "@/1_app/appStore";
 
 export const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
-  // credentials: "include",
+  credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const { accessToken } = (getState() as RootState).auth;
     if (accessToken) {
